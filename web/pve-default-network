@@ -1,0 +1,12 @@
+auto lo
+iface lo inet loopback
+
+# VM bridge
+auto vmbr0
+iface vmbr0 inet static
+  bridge_ports none
+  bridge-stp off
+  bridge-fd 0
+  address 10.99.99.1/24
+
+source /etc/network/interfaces.d/*

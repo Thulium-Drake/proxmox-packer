@@ -1,0 +1,17 @@
+auto lo
+iface lo inet loopback
+
+# Open vSwitch VM bridge
+auto vmbr0
+allow-ovs vmbr0
+iface vmbr0 inet manual
+  ovs_type OVSBridge
+
+auto eth99
+allow-vmbr0 eth99
+iface eth99 inet static
+  ovs_type OVSIntPort
+  ovs_bridge vmbr0
+  address 10.99.99.1/24
+
+source /etc/network/interfaces.d/*

@@ -1,0 +1,7 @@
+[generic]
+proxmox_url = 
+proxmox_user = 
+proxmox_token = 
+
+[default]
+variant = default

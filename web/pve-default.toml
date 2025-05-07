@@ -1,0 +1,19 @@
+[global]
+keyboard = "en-us"
+country = "nl"
+fqdn = "pve-template.example.nl"
+mailto = "root@localhost"
+timezone = "Europe/Amsterdam"
+root_password = "Password123!"
+root_ssh_keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvvqd20duQI6wVHjDkIpJR36V4ZYjnJW7YMc2sEUxDD cloud-user@packer"
+]
+
+[network]
+source = "from-dhcp"
+
+[disk-setup]
+filesystem = "zfs"
+zfs.compress = "zstd"
+zfs.raid = "raid0"
+filter.DEVTYPE = "disk"
